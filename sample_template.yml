@@ -1,0 +1,56 @@
+# Copy this file as template.yml and run to see what happens
+files:
+  - name: data.csv
+    rows: 10
+    cols:
+      - name: id
+        type: string
+        generator:
+          name: integer_sequence
+          params:
+            min: 0
+            max: 9999
+            prefix: "ABC-"
+            padding:
+              length: 4
+              zero_or_space: zero
+      - name: name
+        type: string
+        generator:
+          name: random_string
+          params:
+            length: 5
+      - name: reference
+        type: string
+        generator:
+          name: distribution_of_integers
+          params:
+            ranges:
+              - start: 0
+                end: 9
+                weight: 4
+              - start: 10
+                end: 99
+                weight: 1
+            padding:
+              zero_or_space: zero
+              length: 2
+            prefix: "XYZ-"
+      - name:
+          type: string
+          generator:
+            name: integer_sequence
+            params:
+              min: 0
+              max: 9999
+              prefix: "value"
+              padding:
+                zero_or_space: zero
+                length: 4
+        repeat: 5
+        type: float
+        generator:
+          name: random_float
+          params:
+            min: 0
+            max: 100

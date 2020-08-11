@@ -1,4 +1,12 @@
 default:
+  PyYAML:
+    version: latest
+    installer: pip3
+
+  vaex:
+    version: latest
+    installer: pip3
+
   setuptools:
     version: latest
     installer: pip3

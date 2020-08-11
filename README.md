@@ -1,3 +1,3 @@
 # pyrfdata
 
-This is a README about pyrfdata
+Generate data for performance testing.

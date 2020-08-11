@@ -6,14 +6,14 @@ with open("README.md", "r") as fh:
 print(setuptools.find_packages(where="src"))
 
 setuptools.setup(
-  name="pyrfdata_your_username",
+  name="pyrfdata",
   version="0.0.1",
-  author="Your Name",
-  author_email="your_email@example.com",
+  author="Prasanna Pendse",
+  author_email="prasanna.pendse@gmail.com",
   description="Short description of pyrfdata",
   long_description=long_description,
   long_description_content_type="text/markdown",
-  url="https://github.com/your_username/pyrfdata",
+  url="https://github.com/prasanna/pyrfdata",
   package_dir={"": "src"},
   packages=setuptools.find_packages(where="src"),
   entry_points={
@@ -23,7 +23,7 @@ setuptools.setup(
   },
   classifiers=[
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "License :: OSI Approved :: Apache Software License",
     "Operating System :: OS Independent",
   ],
   python_requires='>=3.6',

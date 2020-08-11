@@ -12,3 +12,6 @@ venv
 **/test/**/dependencies.yml
 .idea/workspace.xml
 *.egg-info
+tmp
+data.csv
+template.yml
