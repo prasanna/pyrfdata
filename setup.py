@@ -7,10 +7,10 @@ print(setuptools.find_packages(where="src"))
 
 setuptools.setup(
   name="pyrfdata",
-  version="0.0.1",
+  version="0.0.2",
   author="Prasanna Pendse",
   author_email="prasanna.pendse@gmail.com",
-  description="Short description of pyrfdata",
+  description="pyrfdata generates data for performance testing",
   long_description=long_description,
   long_description_content_type="text/markdown",
   url="https://github.com/prasanna/pyrfdata",
@@ -21,6 +21,9 @@ setuptools.setup(
       'pyrfdata=pyrfdata.pyrfdata:main',
     ],
   },
+  install_requires=[
+    "pyyaml",
+  ],
   classifiers=[
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: Apache Software License",
