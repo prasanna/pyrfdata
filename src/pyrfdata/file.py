@@ -1,9 +1,9 @@
 import os
 
 from multiprocessing.pool import Pool
-from cell_generator import CellGenerator
-from partition import partition
-import util
+from pyrfdata.cell_generator import CellGenerator
+from pyrfdata.partition import partition
+import pyrfdata.util
 
 
 class File:
@@ -19,8 +19,8 @@ class File:
 
     def generate(self):
         self.spec = self.expand_spec()
-        self.data = util.timed_run(self.generate_data, "actually generating data")
-        util.timed_run(self.write_data, "writing data")
+        self.data = pyrfdata.util.timed_run(self.generate_data, "actually generating data")
+        pyrfdata.util.timed_run(self.write_data, "writing data")
 
     def expand_spec(self):
         spec = {"name": self.original_spec["name"],
@@ -64,7 +64,7 @@ class File:
         pool = Pool(processes=self.request.parallel_processes)
         async_results = []
         for p in partitions:
-            async_results.append(pool.apply_async(util.timed_run, [self.generate_partition, "generating partition " + str(p), p]))
+            async_results.append(pool.apply_async(pyrfdata.util.timed_run, [self.generate_partition, "generating partition " + str(p), p]))
 
         for async_result in async_results:
             data.extend(async_result.get())

@@ -7,7 +7,7 @@ print(setuptools.find_packages(where="src"))
 
 setuptools.setup(
   name="pyrfdata",
-  version="0.0.2",
+  version="0.0.3",
   author="Prasanna Pendse",
   author_email="prasanna.pendse@gmail.com",
   description="pyrfdata generates data for performance testing",
@@ -18,7 +18,7 @@ setuptools.setup(
   packages=setuptools.find_packages(where="src"),
   entry_points={
     'console_scripts': [
-      'pyrfdata=pyrfdata.pyrfdata:main',
+      'pyrfdata=pyrfdata.run:main',
     ],
   },
   install_requires=[

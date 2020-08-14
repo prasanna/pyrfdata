@@ -1,7 +1,7 @@
 import os
 import sys
 import yaml
-from file import File
+from pyrfdata.file import File
 
 
 class Template:

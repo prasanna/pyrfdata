@@ -1,6 +1,6 @@
 import re
 
-from template import Template
+from pyrfdata.template import Template
 
 
 class Request:
